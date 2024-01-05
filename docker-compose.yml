@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nestjs_backend:
+    # image: nest-b:v3
+    build: ./nest-b
+    container_name: nestjs_backend
+    ports:
+      - "4000:4000"
+    restart: unless-stopped
+
+  nextjs_frontend:
+    # image: next-f:v3
+    build: ./next-f
+    container_name: nextjs_frontend
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
